@@ -21,7 +21,8 @@ void display(
 	RESOURCE resource,
 	char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH],
 	CURSOR cursor,
-	BUILD_2x2 haconen_base
+	BUILD_2x2 haconen_base,
+	BUILD_2x2 player_base
 );
 
 #endif

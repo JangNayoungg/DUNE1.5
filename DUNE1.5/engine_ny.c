@@ -35,30 +35,38 @@ OBJECT_SAMPLE obj = {
 	.next_move_time = 300
 };
 
+/*========= haconen data ==========*/
+
 BUILD_2x2 haconen_base = {
 	.pos1_1 = {2, 57},
 	.pos1_2 = {2, 58},
 	.pos2_1 = {3, 57},
 	.pos2_2 = {3, 58},
 	.name = 'B',
-	.builed = true
+	.build = true,
+	.type = 2
 };
 
+/*========= player data ==========*/
+
 BUILD_2x2 player_base = {
-	.pos1_1 = {57, 2},
-	.pos1_2 = {58, 2},
-	.pos2_1 = {57, 3},
-	.pos2_2 = {58, 3},
+	.pos1_1 = {16, 1},
+	.pos1_2 = {16, 2},
+	.pos2_1 = {17, 1},
+	.pos2_2 = {17, 2},
 	.name = 'B',
-	.builed = true
-}; // 이거 아직 출력 안됨
+	.build = true,
+	.type = 1
+};
+
+/*=============  =============*/
 
 int main(void) {
 	srand((unsigned int)time(NULL));
 
 	init();
 	intro();
-	display(resource, map, cursor, haconen_base);
+	display(resource, map, cursor, haconen_base, player_base);
 
 	while (1) {
 		KEY key = get_key();
@@ -75,7 +83,7 @@ int main(void) {
 
 		sample_obj_move();
 
-		display(resource, map, cursor, haconen_base);
+		display(resource, map, cursor, haconen_base,player_base);
 		Sleep(TICK);
 		sys_clock += 10;
 	}

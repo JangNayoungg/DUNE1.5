@@ -16,6 +16,7 @@
 #define MAP_HEIGHT	18
 
 
+
 /* ================= 위치와 방향 =================== */
 // 맵에서 위치를 나타내는 구조체
 typedef struct {
@@ -97,7 +98,29 @@ typedef struct {
 	POSITION pos1_1, pos1_2;	// 상단 위치
 	POSITION pos2_1, pos2_2;  // 하단 위치
 	char name; // 출력할 문자
-	bool builed;	// 빌드 여부(뽀개졋나 안뽀개졋나)
+	bool build;	// 빌드 여부(뽀개졋나 안뽀개졋나)
+	int type;		// 진영 표시용
 }BUILD_2x2;	//2x2 크기 전용
 
+typedef struct {
+	POSITION pos; // 구조물 위치
+	char name; // 출력할 문자
+	bool build;	// 빌드 여부(뽀개졋나 안뽀개졋나)
+	int type;		// 진영 표시용
+}BUILD_1x1;	//1x1 크기
+
+typedef struct {
+	POSITION pos; // 구조물 위치
+	int name; // 출력할 문자, 자원 저장 개수
+	bool getFlag;	// 획득 여부(미획득(매장됨), 획득)
+	int type;		// 진영 표시용
+}SPICE;	//맵 스파이스
+
 #endif
+/*  < type 변수 설명 >
+	1 : 플레이어 진영(아트레이스)
+	2 : 적 진영(하코넨)
+	3 : 샌드웜
+	4 : 스파이스
+	5 : 장판
+	6 : 논타입		*/
