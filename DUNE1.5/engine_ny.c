@@ -35,6 +35,21 @@ OBJECT_SAMPLE obj = {
 	.next_move_time = 300
 };
 
+/*========= game data ==========*/
+BUILD_1x1 spice_1 = {
+	.pos = {7,1},
+	.build = true,
+	.name = '5',
+	.type = 4
+};
+
+BUILD_1x1 spice_2 = {
+	.pos = {10,57},
+	.build = true,
+	.name = '5',
+	.type = 4
+};
+
 /*========= haconen data ==========*/
 
 BUILD_2x2 haconen_base = {
@@ -43,6 +58,23 @@ BUILD_2x2 haconen_base = {
 	.pos2_1 = {3, 57},
 	.pos2_2 = {3, 58},
 	.name = 'B',
+	.build = true,
+	.type = 2
+};
+
+BUILD_2x2 haconen_p1 = {
+	.pos1_1 = {2, 55},
+	.pos1_2 = {2, 56},
+	.pos2_1 = {3, 55},
+	.pos2_2 = {3, 56},
+	.name = 'P',
+	.build = true,
+	.type = 5
+};
+
+BUILD_1x1 haconen_hb1 = {
+	.pos = {4,58},
+	.name = 'H',
 	.build = true,
 	.type = 2
 };
@@ -59,6 +91,23 @@ BUILD_2x2 player_base = {
 	.type = 1
 };
 
+BUILD_2x2 player_p1 = {
+	.pos1_1 = {14, 1},
+	.pos1_2 = {14, 2},
+	.pos2_1 = {15, 1},
+	.pos2_2 = {15, 2},
+	.name = 'P',
+	.build = true,
+	.type = 5
+};
+
+BUILD_1x1 player_hb1 = {
+	.pos = {17,3},
+	.name = 'H',
+	.build = true,
+	.type = 1
+};
+
 /*=============  =============*/
 
 int main(void) {
@@ -66,7 +115,7 @@ int main(void) {
 
 	init();
 	intro();
-	display(resource, map, cursor, haconen_base, player_base);
+	display(resource, map, cursor, haconen_base, player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2);
 
 	while (1) {
 		KEY key = get_key();
@@ -83,7 +132,7 @@ int main(void) {
 
 		sample_obj_move();
 
-		display(resource, map, cursor, haconen_base,player_base);
+		display(resource, map, cursor, haconen_base,player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2);
 		Sleep(TICK);
 		sys_clock += 10;
 	}

@@ -24,7 +24,8 @@ void project(char src[N_LAYER][MAP_HEIGHT][MAP_WIDTH], char dest[MAP_HEIGHT][MAP
 void display_resource(RESOURCE resource);
 void display_map(char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH]);
 void display_cursor(CURSOR cursor);
-void display_buildings_2x2(BUILD_2x2 haconen_base);
+void display_buildings_2x2(BUILD_2x2 obj);
+void display_buildings_1x1(BUILD_1x1 obj);
 void display_system_message(void);
 void display_object_info(void);
 void display_commands(void);
@@ -33,8 +34,10 @@ void display(
 	RESOURCE resource,
 	char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH],
 	CURSOR cursor,
-	BUILD_2x2 haconen_base,
-	BUILD_2x2 player_base
+	BUILD_2x2 haconen_base, BUILD_2x2 player_base,
+	BUILD_2x2 haconen_p1, BUILD_2x2 player_p1,
+	BUILD_1x1 haconen_hb1, BUILD_1x1 player_hb1,
+	BUILD_1x1 spice_1, BUILD_1x1 spice_2
 )
 {
 	display_resource(resource);
@@ -42,6 +45,12 @@ void display(
 	display_cursor(cursor);
 	display_buildings_2x2(haconen_base);
 	display_buildings_2x2(player_base);
+	display_buildings_2x2(haconen_p1);
+	display_buildings_2x2(player_p1);
+	display_buildings_1x1(haconen_hb1);
+	display_buildings_1x1(player_hb1);
+	display_buildings_1x1(spice_1);
+	display_buildings_1x1(spice_2);
 	display_system_message();
 	display_object_info();
 	display_commands();

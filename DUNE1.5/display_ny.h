@@ -22,7 +22,13 @@ void display(
 	char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH],
 	CURSOR cursor,
 	BUILD_2x2 haconen_base,
-	BUILD_2x2 player_base
+	BUILD_2x2 player_base,
+	BUILD_2x2 haconen_p1,
+	BUILD_2x2 player_p1,
+	BUILD_1x1 haconen_hb1,
+	BUILD_1x1 player_hb1,
+	BUILD_1x1 spice_1,
+	BUILD_1x1 spice_2
 );
 
 #endif
