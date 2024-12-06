@@ -35,9 +35,50 @@ OBJECT_SAMPLE obj = {
 	.next_move_time = 300
 };
 
+/*========= map data ==========*/
+BUILD_1x1 rock1 = {
+	.pos = {3,43},
+	.build = true,
+	.name = 'R',
+	.type = 6
+};
+
+BUILD_1x1 rock2 = {
+	.pos = {11, 9},
+	.build = true,
+	.name = 'R',
+	.type = 6
+};
+
+BUILD_1x1 rock3 = {
+	.pos = {16,50},
+	.build = true,
+	.name = 'R',
+	.type = 6
+};
+
+BUILD_2x2 rock4 = {
+	.pos1_1 = {4, 17},
+	.pos1_2 = {4, 18},
+	.pos2_1 = {5, 17},
+	.pos2_2 = {5, 18},
+	.name = 'R',
+	.build = true,
+	.type = 6
+};
+
+BUILD_2x2 rock5 = {
+	.pos1_1 = {11, 34},
+	.pos1_2 = {11, 35},
+	.pos2_1 = {12, 34},
+	.pos2_2 = {12, 35},
+	.name = 'R',
+	.build = true,
+	.type = 6
+};
 /*========= game data ==========*/
 BUILD_1x1 spice_1 = {
-	.pos = {7,1},
+	.pos = {7,2},
 	.build = true,
 	.name = '5',
 	.type = 4
@@ -48,6 +89,20 @@ BUILD_1x1 spice_2 = {
 	.build = true,
 	.name = '5',
 	.type = 4
+};
+
+BUILD_1x1 sandwam1 = {
+	.build = true,
+	.name = 'W',
+	.pos = {4, 7},
+	.type = 3
+};
+
+BUILD_1x1 sandwam2 = {
+	.build = true,
+	.name = 'W',
+	.pos = {12, 52},
+	.type = 3
 };
 
 /*========= haconen data ==========*/
@@ -115,7 +170,7 @@ int main(void) {
 
 	init();
 	intro();
-	display(resource, map, cursor, haconen_base, player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2);
+	display(resource, map, cursor, haconen_base, player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2,sandwam1,sandwam2,rock1,rock2,rock3,rock4,rock5);
 
 	while (1) {
 		KEY key = get_key();
@@ -132,7 +187,7 @@ int main(void) {
 
 		sample_obj_move();
 
-		display(resource, map, cursor, haconen_base,player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2);
+		display(resource, map, cursor, haconen_base,player_base,haconen_p1,player_p1,haconen_hb1,player_hb1,spice_1,spice_2, sandwam1, sandwam2, rock1, rock2, rock3, rock4, rock5);
 		Sleep(TICK);
 		sys_clock += 10;
 	}

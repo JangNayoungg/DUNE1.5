@@ -37,7 +37,10 @@ void display(
 	BUILD_2x2 haconen_base, BUILD_2x2 player_base,
 	BUILD_2x2 haconen_p1, BUILD_2x2 player_p1,
 	BUILD_1x1 haconen_hb1, BUILD_1x1 player_hb1,
-	BUILD_1x1 spice_1, BUILD_1x1 spice_2
+	BUILD_1x1 spice_1, BUILD_1x1 spice_2,
+	BUILD_1x1 sandwam1, BUILD_1x1 sandwam2,
+	BUILD_1x1 rock1, BUILD_1x1 rock2, BUILD_1x1 rock3,
+	BUILD_2x2 rock4, BUILD_2x2 rock5
 )
 {
 	display_resource(resource);
@@ -45,12 +48,25 @@ void display(
 	display_cursor(cursor);
 	display_buildings_2x2(haconen_base);
 	display_buildings_2x2(player_base);
+	
 	display_buildings_2x2(haconen_p1);
 	display_buildings_2x2(player_p1);
+	
 	display_buildings_1x1(haconen_hb1);
 	display_buildings_1x1(player_hb1);
+	
 	display_buildings_1x1(spice_1);
 	display_buildings_1x1(spice_2);
+
+	display_buildings_1x1(sandwam1);
+	display_buildings_1x1(sandwam2);
+
+	display_buildings_1x1(rock1);
+	display_buildings_1x1(rock2);
+	display_buildings_1x1(rock3);
+	display_buildings_2x2(rock4);
+	display_buildings_2x2(rock5);
+
 	display_system_message();
 	display_object_info();
 	display_commands();

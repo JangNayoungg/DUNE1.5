@@ -28,7 +28,14 @@ void display(
 	BUILD_1x1 haconen_hb1,
 	BUILD_1x1 player_hb1,
 	BUILD_1x1 spice_1,
-	BUILD_1x1 spice_2
+	BUILD_1x1 spice_2,
+	BUILD_1x1 sandwam1,
+	BUILD_1x1 sandwam2,
+	BUILD_1x1 rock1,
+	BUILD_1x1 rock2,
+	BUILD_1x1 rock3,
+	BUILD_2x2 rock4,
+	BUILD_2x2 rock5
 );
 
 #endif
