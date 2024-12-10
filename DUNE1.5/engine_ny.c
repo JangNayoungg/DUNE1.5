@@ -16,7 +16,6 @@ POSITION sample_obj_next_position(void);
 int sys_clock = 0;		// system-wide clock(ms)
 CURSOR cursor = { { 1, 1 }, {1, 1} };
 
-
 /* ================= game data =================== */
 char map[N_LAYER][MAP_HEIGHT][MAP_WIDTH] = { 0 };
 
@@ -245,6 +244,42 @@ void cursor_move(DIRECTION dir) {
 		cursor.current = new_pos;
 	}
 }
+/*void cursor_move(DIRECTION dir) {
+    int current_time = sys_clock;
+
+    // 이전 입력과 현재 입력 시간 차이를 계산
+    if (last_dir == dir && (current_time - last_key_time) < DOUBLE_KEY_THRESHOLD) {
+        // 방향키가 연속적으로 두 번 입력되었을 때
+        POSITION curr = cursor.current;
+        POSITION new_pos = pmove(curr, dir);  // 한 칸 이동
+        for (int i = 0; i < 4; i++) {  // 5칸 이동
+            new_pos = pmove(new_pos, dir);
+        }
+
+        // 유효한 위치로 이동
+        if (1 <= new_pos.row && new_pos.row <= MAP_HEIGHT - 2 && \
+            1 <= new_pos.column && new_pos.column <= MAP_WIDTH - 2) {
+            cursor.previous = cursor.current;
+            cursor.current = new_pos;
+        }
+    } else {
+        // 단일 방향 입력: 한 칸 이동
+        POSITION curr = cursor.current;
+        POSITION new_pos = pmove(curr, dir);
+
+        // 위치 이동
+        if (1 <= new_pos.row && new_pos.row <= MAP_HEIGHT - 2 && \
+            1 <= new_pos.column && new_pos.column <= MAP_WIDTH - 2) {
+            cursor.previous = cursor.current;
+            cursor.current = new_pos;
+        }
+    }
+
+    // 현재 입력된 방향 시간을 저장
+    last_dir = dir;
+    last_key_time = current_time;
+}
+*/
 
 /* ================= sample object movement =================== */
 POSITION sample_obj_next_position(void) {
